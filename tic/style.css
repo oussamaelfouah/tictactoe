@@ -1,0 +1,11 @@
+#main {
+    display: grid;
+    grid-template: repeat(3,70px) / repeat(3, 70px);
+
+}
+  #main  > span{
+    width: 20px;
+    height: 30px;
+    border: 2px solid black;
+}
+
