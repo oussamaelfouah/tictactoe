@@ -1,11 +1,43 @@
 #main {
     display: grid;
     grid-template: repeat(3,70px) / repeat(3, 70px);
-
 }
+
   #main  > span{
-    width: 20px;
+    width: 30px;
     height: 30px;
-    border: 2px solid black;
+    border: 2px solid rgb(226, 67, 67);
+    border-radius: 30px;
 }
 
+#main>span:hover{
+  border: 2px solid rgb(122, 51, 207);
+}
+div {  
+
+display: flexbox;
+  align-content: center;
+  justify-content: center;
+  margin-top: 1%;
+  
+}
+span{
+
+  text-align: center;
+  margin: auto;
+  font-size: larger;
+}
+form {
+  display: flexbox;
+margin-top: 40px;
+margin-left: 27%;
+margin-bottom: 10px;
+
+}
+.inp{
+  border: 2px solid gray;
+
+}
+.inp:hover{
+  border: 1px solid black;
+}

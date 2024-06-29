@@ -3,7 +3,24 @@ const ticBoxesDomElements = document.getElementsByClassName("i");
 const ticBoxesCells = Array.from(ticBoxesDomElements);
 const winnerMessage = document.getElementById("winner-message")
 const ticBoxesResults = new Array(9).fill(null);
-let currentSymbol = "x";
+const start = document.getElementById("btn");
+
+var data_obj = {
+    fname: "",
+    lname: ""
+};
+
+start.addEventListener("click", storeInDOM);
+
+function storeInDOM() {
+    const userone = document.getElementById("plA").value;
+    const usertwo = document.getElementById("plB").value;
+    data_obj.fname = userone;
+    data_obj.lname = usertwo;
+    console.log(data_obj);
+}
+
+let currentSymbol = "X";
 
 // Predefined winning conditions
 const winConditions = [
@@ -43,16 +60,24 @@ ticBoxesCells.forEach((cell, index) => {
 
             // Check if the current player has won
             if (checkWinner(currentSymbol)) {
-                // Update DOM with winner message (e.g., "Player X wins!")
-                // You can also disable further clicks on cells here
-                winnerMessage.textContent = ("the winner is  " + `${currentSymbol}`)
-                console.log(winnerMessage)
+                let winnerName;
+                if (currentSymbol === "X") {
+                    winnerName = data_obj.fname;
+
+                }
+                else {
+                    winnerName = data_obj.lname;
+
+                }
+
+                winnerMessage.textContent = ("the winner is " + `${winnerName}`)
+                console.log(winnerMessage.textContent)
                 // Add more logic (e.g., reset the game) if needed
                 return;
             }
 
             // Switch to the other player's symbol
-            currentSymbol = currentSymbol === "x" ? "o" : "x";
+            currentSymbol = currentSymbol === "X" ? "O" : "X";
 
             console.log("ticBoxesResults =>", ticBoxesResults);
         }
